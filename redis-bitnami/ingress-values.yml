@@ -1,0 +1,2 @@
+tcp: 
+  6379: "public/redis-headless:6379"

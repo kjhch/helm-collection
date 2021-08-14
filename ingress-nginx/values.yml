@@ -1,0 +1,9 @@
+controller:
+  image:
+    repository: bitnami/nginx-ingress-controller
+    tag: "0.46.0"
+    digest: null
+  hostNetwork: true
+
+defaultBackend:
+  enabled: false

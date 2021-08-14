@@ -1,4 +1,5 @@
 CWD=$(cd "$(dirname "$0")";pwd)
+VERSION="4.0.13"
 
 yum -y install nfs-utils
 mkdir /nfs-storage
@@ -8,4 +9,5 @@ systemctl restart rpcbind && systemctl enable rpcbind
 systemctl restart nfs && systemctl enable nfs
 
 helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
-helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner -f $CWD/values.yml
+helm repo update
+helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --version $VERSION --values $CWD/values.yml
