@@ -1,2 +1,2 @@
 tcp: 
-  6379: "public/redis-headless:6379"
+  6379: "share/redis-headless:6379"
