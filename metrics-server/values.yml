@@ -1,6 +1,6 @@
 apiService:
   create: true
 
-extraArgs:
-  - --kubelet-insecure-tls
-  - --kubelet-preferred-address-types=InternalIP
+extraArgs: 
+  kubelet-insecure-tls: true
+  kubelet-preferred-address-types: InternalIP
