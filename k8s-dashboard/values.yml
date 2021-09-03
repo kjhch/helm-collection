@@ -2,10 +2,10 @@ metricsScraper:
   enabled: true
 
 metrics-server:
-  enabled: true
+  enabled: false
 
 ingress:
   ## If true, Kubernetes Dashboard Ingress will be created.
   ##
-  enabled: false
+  enabled: true
   hosts: k8s.kejun.cc
