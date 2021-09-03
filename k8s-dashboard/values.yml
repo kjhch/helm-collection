@@ -8,4 +8,8 @@ ingress:
   ## If true, Kubernetes Dashboard Ingress will be created.
   ##
   enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: 'false'
   hosts: ["k8s.kejun.cc"]
+  
