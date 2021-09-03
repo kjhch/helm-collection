@@ -8,4 +8,4 @@ ingress:
   ## If true, Kubernetes Dashboard Ingress will be created.
   ##
   enabled: true
-  hosts: k8s.kejun.cc
+  hosts: ["k8s.kejun.cc"]
