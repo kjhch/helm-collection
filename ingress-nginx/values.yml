@@ -4,6 +4,7 @@ controller:
     tag: "0.46.0"
     digest: null
   hostNetwork: true
+  kind: DaemonSet
 
 defaultBackend:
   enabled: false
