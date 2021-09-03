@@ -6,7 +6,7 @@ VERSION="2.6.0"
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
-helm install metrics-server bitnami/metrics-server --version $METRICS_SERVER_VERSION -n $NAMESPACE
+helm install metrics-server bitnami/metrics-server --set apiService.create=true --version $METRICS_SERVER_VERSION -n $NAMESPACE
 
 helm repo add k8s-dashboard https://kubernetes.github.io/dashboard
 helm repo update
