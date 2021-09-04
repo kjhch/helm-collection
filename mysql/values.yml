@@ -12,8 +12,7 @@ master:
   persistence: 
     storageClass: nfs-client
     size: 20G
-    mountPath: /data
   resources:
     limits:
-      cpu: 2
-      memory: 2G
+      cpu: 4
+      memory: 4G
