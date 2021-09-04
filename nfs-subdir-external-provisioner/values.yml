@@ -3,3 +3,8 @@ image:
 
 nfs:
   server: master.local
+
+resources:
+  limits:
+    cpu: 0.2
+    memory: 200M

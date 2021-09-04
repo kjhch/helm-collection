@@ -4,3 +4,8 @@ global:
 
 cluster:
   enabled: false
+
+resources:
+  limits:
+    cpu: 2
+    memory: 4G

@@ -8,3 +8,6 @@ controller:
 
 defaultBackend:
   enabled: false
+
+tcp: 
+  6379: "share/redis-headless:6379"

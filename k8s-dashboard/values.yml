@@ -1,3 +1,6 @@
+extraArgs:
+  - --token-ttl=43200
+
 metricsScraper:
   enabled: true
 

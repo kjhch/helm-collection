@@ -1,0 +1,14 @@
+root.password: 1234
+replication.enabled: false
+# creating-a-database-on-first-run
+db.name: common
+
+master: 
+  persistence: 
+    storageClass: nfs-client
+    size: 20G
+    mountPath: /data
+  resources:
+    limits:
+      cpu: 2
+      memory: 2G

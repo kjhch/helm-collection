@@ -4,3 +4,8 @@ apiService:
 extraArgs: 
   kubelet-insecure-tls: true
   kubelet-preferred-address-types: InternalIP
+
+resources:
+  limits:
+    cpu: 0.2
+    memory: 200M
