@@ -11,3 +11,4 @@ defaultBackend:
 
 tcp: 
   6379: "share/redis-headless:6379"
+  3306: "share/mysql:3306"

@@ -1,9 +1,9 @@
 root:
-  password: 1234
+  password: "1234"
 
 replication:
   enabled: false
-  
+
 # creatinga-database-on-first-run
 db:
   name: common
