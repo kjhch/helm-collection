@@ -1,0 +1,7 @@
+ingress:
+  enabled: true
+  hostname: jenkins.kejun.cc
+
+persistence:
+  storageClass: nfs-client
+  size: 5G
