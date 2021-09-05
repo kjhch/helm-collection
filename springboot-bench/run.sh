@@ -10,4 +10,5 @@ echo "helm action: $ACTION"
 helm $ACTION `basename $CWD` $CWD \
 -n $NAMESPACE \
 --create-namespace \
+--reset-values \
 $*
