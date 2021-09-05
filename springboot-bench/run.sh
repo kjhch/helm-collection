@@ -7,6 +7,7 @@ if [[ "$1" == "u" || "$1" == "upgrade" ]]; then
 fi
 echo "action: $ACTION"
 
-helm $ACTION `dirname $0` . "$*" \
+helm $ACTION `dirname $0` . \
 -n $NAMESPACE \
---create-namespace 
+--create-namespace \
+"$*"
