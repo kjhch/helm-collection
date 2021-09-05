@@ -5,9 +5,9 @@ if [[ "$1" == "u" || "$1" == "upgrade" ]]; then
     ACTION="upgrade"
     shift 1
 fi
-echo "action: $ACTION"
+echo "helm action: $ACTION"
 
-helm $ACTION `dirname $0` . \
+helm $ACTION `basename $CWD` $CWD \
 -n $NAMESPACE \
 --create-namespace \
-"$*"
+$*
