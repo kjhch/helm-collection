@@ -1,3 +1,4 @@
+set -x
 NAMESPACE="app"
 ACTION="install"
 CWD=$(cd "$(dirname "$0")";pwd)
