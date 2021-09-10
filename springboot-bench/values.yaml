@@ -15,8 +15,8 @@ args: []
 env: 
   - name: spring.profiles.active
     value: prod
-  - name: BUILD
-    value: 0
+
+build: null
 
 imagePullSecrets: []
 nameOverride: ""
