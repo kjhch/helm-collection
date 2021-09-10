@@ -48,6 +48,8 @@ spec:
           args: 
             {{- toYaml .Values.args | nindent 12 }}
           env:
+            - name: BUILD
+              value: {{ .Values.build }}
             {{- toYaml .Values.env | nindent 12 }}
           ports:
             - name: http
