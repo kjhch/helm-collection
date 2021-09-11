@@ -52,6 +52,10 @@ spec:
             - name: bench
               mountPath: /bench
       {{- with .Values.nodeSelector }}
+      volumes: 
+        - name: bench
+          persistentVolumeClaim:
+            claimName: bench
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
@@ -63,7 +67,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-  volumeClaimTemplates:
+  persistentVolumeClaim:
     - metadata:
         name: bench
       spec:
