@@ -51,11 +51,11 @@ spec:
           volumeMounts: 
             - name: bench
               mountPath: /bench
-      {{- with .Values.nodeSelector }}
       volumes: 
         - name: bench
           persistentVolumeClaim:
             claimName: bench
+      {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
