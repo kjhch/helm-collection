@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "springboot-bench.fullname" . }}
+  name: {{ include "bench-base.fullname" . }}
   labels:
-    {{- include "springboot-bench.labels" . | nindent 4 }}
+    {{- include "bench-base.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "springboot-bench.fullname" . }}
+    name: {{ include "bench-base.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
@@ -25,10 +25,4 @@ spec:
         name: memory
         targetAverageUtilization: {{ .Values.autoscaling.targetMemoryUtilizationPercentage }}
     {{- end }}
-  behavior: 
-    scaleUp:
-      policies:
-      - type: Pods
-        value: 1
-        periodSeconds: 15
 {{- end }}
