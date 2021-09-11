@@ -92,7 +92,9 @@ tolerations: []
 affinity: 
   nodeAffinity:
     preferredDuringSchedulingIgnoredDuringExecution:
-      - matchExpressions:
-          - key: node-role.kubernetes.io/master
-            operator: DoesNotExist
+      - weight: 1
+        preference:
+          matchExpressions:
+            - key: node-role.kubernetes.io/master
+              operator: DoesNotExist
 
