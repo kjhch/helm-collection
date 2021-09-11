@@ -63,13 +63,13 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      volumeClaimTemplates:
-        - metadata:
-            name: bench
-          spec:
-            accessModes: ["ReadWriteOnce"]
-            storageClassName: "nfs-client"
-            resources:
-              requests:
-                storage: 10M
+  volumeClaimTemplates:
+    - metadata:
+        name: bench
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: "nfs-client"
+        resources:
+          requests:
+            storage: 10M
 
