@@ -1,0 +1,10 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: bench
+spec:
+  accessModes: ["ReadWriteOnce"]
+  storageClassName: "nfs-client"
+  resources:
+    requests:
+      storage: 10M

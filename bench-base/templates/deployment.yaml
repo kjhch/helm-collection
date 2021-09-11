@@ -67,13 +67,4 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-  persistentVolumeClaim:
-    - metadata:
-        name: bench
-      spec:
-        accessModes: ["ReadWriteOnce"]
-        storageClassName: "nfs-client"
-        resources:
-          requests:
-            storage: 10M
 
