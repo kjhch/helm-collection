@@ -14,6 +14,10 @@ daemonset:
       - type: log
         paths:
         - /var/lib/kubelet/pods/*/volumes/**/*.log
+        output.elasticsearch.index: "customname-%{[agent.version]}-%{+yyyy.MM.dd}"
+        setup.template.name: "customname"
+        setup.template.pattern: "customname-*"
+
 
       # filebeat.inputs:
       # - type: container
