@@ -38,9 +38,10 @@ daemonset:
                   event.Put("pod_ip", k8s.pod.ip);
                   event.Put("node_name", k8s.node.name);
               }
-        - drop_fields:
-            fields: ["host", "ecs", "log", "agent", "input", "kubernetes"]
-            ignore_missing: true
+      processors:
+      - drop_fields:
+          fields: ["host", "ecs", "log", "agent", "input", "kubernetes"]
+          ignore_missing: true
 
       setup.ilm.enabled: false
       setup.template.name: "app-metrics"
