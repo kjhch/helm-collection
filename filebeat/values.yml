@@ -15,7 +15,7 @@ daemonset:
         paths:
         - /var/lib/kubelet/pods/*/volumes/**/*.log
       # output.elasticsearch.index: "logs-metrics-%{[agent.version]}-%{+yyyy.MM.dd}"
-      # setup.ilm.enabled: false
+      setup.ilm.enabled: false
       setup.template.name: "logs-metrics"
       setup.template.pattern: "logs-metrics-*"
       # setup.template.overwrite: true
@@ -34,7 +34,6 @@ daemonset:
 
       output.elasticsearch:
         hosts: 'elasticsearch-master.share:9200'
-        ilm.enabled: false
         index: "logs-metrics-%{[agent.version]}-%{+yyyy.MM.dd}"
 
 # /var/log/containers/ 命名格式：[podName]_[nameSpace]_[depoymentName]-[containerId].log
