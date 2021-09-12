@@ -32,13 +32,6 @@ daemonset:
             source: >
               function process(event) {
                   var k8s=event.Get("kubernetes");
-                  # var newK8s = {
-                  #     podName: k8s.pod.name,
-                  #     nameSpace: k8s.namespace,
-                  #     imageAddr: k8s.container.name,
-                  #     hostName: k8s.node.hostname
-                  # }
-                  # event.Put("k8s", newK8s);
                   event.Put("app_name", k8s.labels.app_kubernetes_io/name);
                   event.Put("app_namespace", k8s.namespace);
                   event.Put("pod_name", k8s.pod.name);
