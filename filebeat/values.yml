@@ -16,8 +16,8 @@ daemonset:
         - /var/lib/kubelet/pods/*/volumes/**/*.log
       # output.elasticsearch.index: "customname-%{[agent.version]}-%{+yyyy.MM.dd}"
       setup.ilm.enabled: false
-      # setup.template.overwrite: true
-      # setup.template.enabled: true
+      setup.template.overwrite: true
+      setup.template.enabled: true
       setup.template.name: "customname"
       setup.template.pattern: "customname-*"
 
