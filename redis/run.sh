@@ -1,7 +1,7 @@
 set -x
 CWD=$(cd "$(dirname "$0")";pwd)
 NAMESPACE="share"
-VERSION="6.14.12"
+VERSION="10.6.12"
 ACTION="install"
 ADDITIONAL_FLAGS=$*
 
@@ -13,8 +13,8 @@ fi
 echo "helm action: $ACTION"
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
-# helm repo update
-helm $ACTION `basename $CWD` bitnami/mysql \
+helm repo update
+helm $ACTION `basename $CWD` bitnami/redis \
 -n $NAMESPACE \
 --create-namespace \
 --version $VERSION \
