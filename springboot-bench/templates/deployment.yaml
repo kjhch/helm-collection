@@ -74,6 +74,7 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts: 
-            - mountPath: $(PWD)/log
+            - mountPath: /
+              subPathExpr: $(PWD)/log
               name: log
 
