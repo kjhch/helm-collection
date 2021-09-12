@@ -13,7 +13,7 @@ daemonset:
       filebeat.inputs:
       - type: log
         paths:
-        - /var/lib/kubelet/pods/*/volumes/**/*.log
+          - /var/lib/kubelet/pods/*/volumes/**/*.log
         processors:
         - add_kubernetes_metadata:
             host: ${NODE_NAME}
@@ -23,7 +23,7 @@ daemonset:
               - pod_uid:
             matchers:
             - logs_path:
-                logs_path: "/var/lib/kubelet/pods/*/volumes/**/*.log"
+                logs_path: "/var/lib/kubelet/pods"
                 resource_type: 'pod'
 
       setup.ilm.enabled: false
