@@ -32,7 +32,7 @@ daemonset:
             source: >
               function process(event) {
                   var k8s=event.Get("kubernetes");
-                  event.Put("app_name", k8s.labels.app_kubernetes_io/name);
+                  event.Put("app_name", k8s.labels['app_kubernetes_io/name']);
                   event.Put("app_namespace", k8s.namespace);
                   event.Put("pod_name", k8s.pod.name);
                   event.Put("pod_ip", k8s.pod.ip);
