@@ -17,9 +17,14 @@ daemonset:
         processors:
         - add_kubernetes_metadata:
             host: ${NODE_NAME}
+            default_indexers.enabled: false
+            default_matchers.enabled: false
+            indexers:
+              - pod_uid:
             matchers:
             - logs_path:
                 logs_path: "/var/lib/kubelet/pods/*/volumes/**/*.log"
+                resource_type: 'pod'
 
       setup.ilm.enabled: false
       setup.template.name: "app-metrics"
