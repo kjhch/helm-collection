@@ -90,11 +90,21 @@ nodeSelector: {}
 tolerations: []
 
 affinity: 
-  nodeAffinity:
+  podAntiAffinity:
     preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
-        preference:
-          matchExpressions:
-            - key: node-role.kubernetes.io/master
-              operator: DoesNotExist
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values: ["bench-base"]
+          topologyKey: kubernetes.io/hostname
+  # nodeAffinity:
+  #   preferredDuringSchedulingIgnoredDuringExecution:
+  #     - weight: 1
+  #       preference:
+  #         matchExpressions:
+  #           - key: node-role.kubernetes.io/master
+  #             operator: DoesNotExist
 
