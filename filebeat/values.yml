@@ -41,8 +41,6 @@ daemonset:
         - drop_fields:
             fields: ["host", "ecs", "log", "agent", "input", "kubernetes"]
             ignore_missing: true
-        - include_fields:
-            fields: ["app_name"]
 
 
       setup.ilm.enabled: false
@@ -63,5 +61,6 @@ daemonset:
       output.elasticsearch:
         hosts: 'elasticsearch-master.share:9200'
         index: "app-metrics-%{[agent.version]}-%{+yyyy.MM.dd}"
+        pipeline: "metrics-pretty"
 
 # /var/log/containers/ 命名格式：[podName]_[nameSpace]_[depoymentName]-[containerId].log
