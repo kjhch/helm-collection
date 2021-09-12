@@ -14,12 +14,16 @@ daemonset:
       - type: log
         paths:
         - /var/lib/kubelet/pods/*/volumes/**/*.log
-      # output.elasticsearch.index: "app-metrics-%{[agent.version]}-%{+yyyy.MM.dd}"
+        processors:
+        - add_kubernetes_metadata:
+            host: ${NODE_NAME}
+            matchers:
+            - logs_path:
+                logs_path: "/var/lib/kubelet/pods/*/volumes/**/*.log"
+
       setup.ilm.enabled: false
       setup.template.name: "app-metrics"
       setup.template.pattern: "app-metrics-*"
-      # setup.template.overwrite: true
-      # setup.template.enabled: true
     
       # filebeat.inputs:
       # - type: container
