@@ -42,7 +42,6 @@ daemonset:
             fields: ["host", "ecs", "log", "agent", "input", "kubernetes"]
             ignore_missing: true
 
-
       setup.ilm.enabled: false
       setup.template.name: "app-metrics"
       setup.template.pattern: "app-metrics-*"
