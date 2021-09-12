@@ -18,8 +18,8 @@ daemonset:
       # setup.ilm.enabled: false
       # setup.template.overwrite: true
       # setup.template.enabled: true
-      # setup.template.name: "customname"
-      # setup.template.pattern: "customname-*"
+      setup.template.name: "customname"
+      setup.template.pattern: "customname-*"
 
 
       # filebeat.inputs:
