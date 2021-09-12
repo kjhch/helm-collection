@@ -1,5 +1,10 @@
 elasticsearchHosts: http://elasticsearch-master.share:9200
 
+kibanaConfig: 
+  kibana.yml: |
+    elasticsearch.username: "admin"
+    elasticsearch.password: "admin@es"
+
 ingress:
   enabled: true
   annotations:

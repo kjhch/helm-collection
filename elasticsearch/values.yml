@@ -1,3 +1,13 @@
+esConfig: 
+ elasticsearch.yml: |
+    xpack.security.enabled: true
+
+extraEnvs:
+  - name: ELASTIC_USERNAME
+    value: admin
+  - name: ELASTIC_PASSWORD
+    value: admin@es
+
 volumeClaimTemplate:
   accessModes: ["ReadWriteOnce"]
   storageClassName: "nfs-client"
