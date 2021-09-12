@@ -1,0 +1,11 @@
+elasticsearchHosts: http://elasticsearch-master.share:9200
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: kibana.kejun.cc
+      paths:
+        - path: /
