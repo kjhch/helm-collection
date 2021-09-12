@@ -59,7 +59,7 @@ daemonset:
 
       output.elasticsearch:
         hosts: 'elasticsearch-master.share:9200'
-        index: "app-metrics-%{[agent.version]}-%{+yyyy.MM.dd}"
+        index: "app-metrics-%{[app_name]}"
         pipeline: "metrics-pretty"
 
 # /var/log/containers/ 命名格式：[podName]_[nameSpace]_[depoymentName]-[containerId].log
