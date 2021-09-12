@@ -1,6 +1,7 @@
 global:
   storageClass: nfs-client
-  redis.password: 1234
+  redis:
+    password: 7NW8qNOVUU
 
 cluster:
   enabled: false
