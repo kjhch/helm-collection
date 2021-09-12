@@ -1,11 +1,11 @@
-  extraVolumes:
-    - name: pods
-      hostPath:
-          path: /var/lib/kubelet/pods
-  extraVolumeMounts:
-    - name: pods
-      mountPath: /var/lib/kubelet/pods
-      readOnly: true
+extraVolumes:
+  - name: pods
+    hostPath:
+        path: /var/lib/kubelet/pods
+extraVolumeMounts:
+  - name: pods
+    mountPath: /var/lib/kubelet/pods
+    readOnly: true
 
 daemonset:
   filebeatConfig:
