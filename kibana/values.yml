@@ -1,15 +1,14 @@
 elasticsearchHosts: http://elasticsearch-master.share:9200
 
-kibanaConfig: 
-  kibana.yml: |
-    elasticsearch.username: "admin"
-    elasticsearch.password: "admin@es"
-
 ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+    # type of authentication
+    nginx.ingress.kubernetes.io/auth-type: basic
+    # name of the secret that contains the user/password definitions
+    nginx.ingress.kubernetes.io/auth-secret: kibana
+
   hosts:
     - host: kibana.kejun.cc
       paths:
