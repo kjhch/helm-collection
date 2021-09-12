@@ -19,7 +19,7 @@ daemonset:
       setup.template.name: "logs-metrics"
       setup.template.pattern: "logs-metrics-*"
       # setup.template.overwrite: true
-      # setup.template.enabled: true
+      setup.template.enabled: true
     
       # filebeat.inputs:
       # - type: container
