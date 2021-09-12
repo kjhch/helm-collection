@@ -14,31 +14,30 @@ daemonset:
       - type: log
         paths:
           - /var/lib/kubelet/pods/*/volumes/**/*.log
-        processors:
-        - add_kubernetes_metadata:
-            host: ${NODE_NAME}
-            default_indexers.enabled: false
-            default_matchers.enabled: false
-            indexers:
-              - pod_uid:
-            matchers:
-            - logs_path:
-                logs_path: "/var/lib/kubelet/pods"
-                resource_type: 'pod'
-        - script:
-            lang: javascript
-            id: format_k8s
-            tag: enable
-            source: >
-              function process(event) {
-                  var k8s=event.Get("kubernetes");
-                  event.Put("app_name", k8s.labels['app_kubernetes_io/name']);
-                  event.Put("app_namespace", k8s.namespace);
-                  event.Put("pod_name", k8s.pod.name);
-                  event.Put("pod_ip", k8s.pod.ip);
-                  event.Put("node_name", k8s.node.name);
-              }
       processors:
+      - add_kubernetes_metadata:
+          host: ${NODE_NAME}
+          default_indexers.enabled: false
+          default_matchers.enabled: false
+          indexers:
+            - pod_uid:
+          matchers:
+          - logs_path:
+              logs_path: "/var/lib/kubelet/pods"
+              resource_type: 'pod'
+      - script:
+          lang: javascript
+          id: format_k8s
+          tag: enable
+          source: >
+            function process(event) {
+                var k8s=event.Get("kubernetes");
+                event.Put("app_name", k8s.labels['app_kubernetes_io/name']);
+                event.Put("app_namespace", k8s.namespace);
+                event.Put("pod_name", k8s.pod.name);
+                event.Put("pod_ip", k8s.pod.ip);
+                event.Put("node_name", k8s.node.name);
+            }
       - drop_fields:
           fields: ["host", "ecs", "log", "agent", "input", "kubernetes"]
           ignore_missing: true
