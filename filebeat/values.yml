@@ -14,12 +14,12 @@ daemonset:
       - type: log
         paths:
         - /var/lib/kubelet/pods/*/volumes/**/*.log
-      # output.elasticsearch.index: "logs-metrics-%{[agent.version]}-%{+yyyy.MM.dd}"
+      # output.elasticsearch.index: "app-metrics-%{[agent.version]}-%{+yyyy.MM.dd}"
       setup.ilm.enabled: false
-      setup.template.name: "logs-metrics"
-      setup.template.pattern: "logs-metrics-*"
-      setup.template.overwrite: true
-      setup.template.enabled: true
+      setup.template.name: "app-metrics"
+      setup.template.pattern: "app-metrics-*"
+      # setup.template.overwrite: true
+      # setup.template.enabled: true
     
       # filebeat.inputs:
       # - type: container
@@ -34,6 +34,6 @@ daemonset:
 
       output.elasticsearch:
         hosts: 'elasticsearch-master.share:9200'
-        index: "logs-metrics-%{[agent.version]}-%{+yyyy.MM.dd}"
+        index: "app-metrics-%{[agent.version]}-%{+yyyy.MM.dd}"
 
 # /var/log/containers/ 命名格式：[podName]_[nameSpace]_[depoymentName]-[containerId].log
