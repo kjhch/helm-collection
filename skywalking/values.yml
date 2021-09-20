@@ -13,7 +13,7 @@ ui:
     tag: 8.6.0
   ingress:
     enabled: true
-    hosts: skywalking.kejun.cc
+    hosts: [skywalking.kejun.cc]
 
 elasticsearch:
   enabled: false
