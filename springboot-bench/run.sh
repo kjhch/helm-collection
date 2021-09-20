@@ -3,7 +3,7 @@ NAMESPACE="app"
 CWD=$(cd "$(dirname "$0")";pwd)
 
 helm upgrade `basename $CWD` $CWD \
---install
+--install \
 -n $NAMESPACE \
 --create-namespace \
 $* \
