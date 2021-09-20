@@ -1,0 +1,23 @@
+oap:
+  image:
+    tag: 8.6.0-es7
+  storageType: elasticsearch7
+  replicas: 1
+  resources: 
+    limits:
+      cpu: 4
+      memory: 4Gi
+
+ui:
+  image:
+    tag: 8.6.0
+  ingress:
+    enabled: true
+    hosts: skywalking.kejun.cc
+
+elasticsearch:
+  enabled: false
+  config:               # For users of an existing elasticsearch cluster,takes effect when `elasticsearch.enabled` is false
+    port:
+      http: 9200
+    host: elasticsearch-master.share
