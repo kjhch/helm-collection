@@ -6,7 +6,7 @@ VERSION="4.0.0"
 helm repo add skywalking https://apache.jfrog.io/artifactory/skywalking-helm
 helm repo update
 helm upgrade `basename $CWD` skywalking/skywalking \
---install
+--install \
 -n $NAMESPACE \
 --create-namespace \
 --version $VERSION \
