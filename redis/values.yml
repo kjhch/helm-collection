@@ -1,12 +1,8 @@
-global:
-  storageClass: nfs-client
-  redis:
-    password: zC3RBkpdWR
+architecture: standalone
 
-cluster:
-  enabled: false
+auth:
+  password: "1234"
 
-resources:
-  limits:
-    cpu: 2
-    memory: 2G
+master:
+  persistence:
+    storageClass: nfs-client

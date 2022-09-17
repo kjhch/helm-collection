@@ -2,7 +2,7 @@ image:
   repository: kubesphere/nfs-subdir-external-provisioner
 
 nfs:
-  server: master.local
+  server: hpvm-master.local
 
 resources:
   limits:

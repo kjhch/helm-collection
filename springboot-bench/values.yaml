@@ -10,7 +10,10 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
-args: []
+args: 
+  - --spring.datasource.url=jdbc:mysql://mysql.share:3306/test?useSSL=false&characterEncoding=utf8
+  - --spring.redis.url=redis://:1234@redis-headless.share:6379
+
 
 env: 
   - name: spring.profiles.active
@@ -71,8 +74,8 @@ resources:
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
-    cpu: 2
-    memory: 2G
+    cpu: 1
+    memory: 1G
   # requests:
   #   cpu: 100m
   #   memory: 128Mi

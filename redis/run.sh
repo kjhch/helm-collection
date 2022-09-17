@@ -1,7 +1,7 @@
 set -x
 CWD=$(cd "$(dirname "$0")";pwd)
 NAMESPACE="share"
-VERSION="10.6.12"
+VERSION="16.0.0"
 ACTION="install"
 ADDITIONAL_FLAGS=$*
 
