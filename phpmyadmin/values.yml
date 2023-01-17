@@ -1,0 +1,13 @@
+db:
+  host: mysql.share
+  port: 3306
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+
+  hosts:
+    - host: mysql.admin.kejun.cc
+      paths:
+        - path: /
