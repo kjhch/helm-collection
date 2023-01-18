@@ -6,8 +6,4 @@ ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: nginx
-
-  hosts:
-    - host: mysql.admin.kejun.cc
-      paths:
-        - path: /
+  hostname: mysql.admin.kejun.cc
