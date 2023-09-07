@@ -1,5 +1,5 @@
 CWD=$(cd "$(dirname "$0")";pwd)
-VERSION="3.31.0"
+VERSION="4.7.1"
 ACTION="install"
 if [[ "$1" == "u" || "$1" == "upgrade" ]]
 then ACTION="upgrade"

@@ -1,6 +1,6 @@
 CWD=$(cd "$(dirname "$0")";pwd)
 NAMESPACE="kube-system"
-VERSION="2.6.0"
+VERSION="6.0.8"
 ACTION="install"
 if [[ "$1" == "u" || "$1" == "upgrade" ]]
 then ACTION="upgrade"
