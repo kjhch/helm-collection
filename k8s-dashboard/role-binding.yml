@@ -1,8 +1,8 @@
 # kubectl apply -f role-binding.yml
 kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: admin
+  name: dashboard-admin
   annotations:
     rbac.authorization.kubernetes.io/autoupdate: "true"
 roleRef:
@@ -13,3 +13,13 @@ subjects:
 - kind: ServiceAccount
   name: kubernetes-dashboard
   namespace: kube-system
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dashboard-admin
+  namespace: kube-system
+  annotations:
+    kubernetes.io/service-account.name: "dashboard-admin"
+type: kubernetes.io/service-account-token  

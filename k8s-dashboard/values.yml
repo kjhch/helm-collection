@@ -5,7 +5,7 @@ metricsScraper:
   enabled: true
 
 metrics-server:
-  enabled: false
+  enabled: true
 
 ingress:
   ## If true, Kubernetes Dashboard Ingress will be created.
