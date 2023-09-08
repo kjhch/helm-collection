@@ -6,6 +6,10 @@ metricsScraper:
 
 metrics-server:
   enabled: true
+  ## Example for additional args
+  args:
+   - --kubelet-preferred-address-types=InternalIP
+   - --kubelet-insecure-tls
 
 ingress:
   ## If true, Kubernetes Dashboard Ingress will be created.
